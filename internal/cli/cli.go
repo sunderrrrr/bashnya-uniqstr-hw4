@@ -31,6 +31,9 @@ func Run() {
 	sl := strings.Split(str, "\n")
 	uniq := service.NewUniqService()
 	result, err := uniq.Process(sl, cfg)
+	if err != nil {
+		log.Fatalf("err: process err: %v", err)
+	}
 	if cfg.Output == "" {
 		fmt.Println(result)
 	} else {

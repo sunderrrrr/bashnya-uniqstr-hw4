@@ -18,12 +18,12 @@ func argParse() (*domain.Options, error) {
 		return nil, fmt.Errorf("флаги -c, -d, -u взаимоисключающие")
 	}
 	args := flag.Args()
-	var input_file, output_file string
+	var inputFile, outputFile string
 	if len(args) > 0 {
-		input_file = args[0]
+		inputFile = args[0]
 	}
 	if len(args) > 1 {
-		output_file = args[1]
+		outputFile = args[1]
 	}
 	return &domain.Options{
 		C:      *count,
@@ -32,7 +32,7 @@ func argParse() (*domain.Options, error) {
 		F:      *firstWords,
 		S:      *firstChars,
 		I:      *charCase,
-		Input:  input_file,
-		Output: output_file,
+		Input:  inputFile,
+		Output: outputFile,
 	}, nil
 }
